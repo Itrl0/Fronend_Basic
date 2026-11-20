@@ -1,0 +1,84 @@
+/* Загальне оформлення сторінки. */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 24px;
+    color: #111;
+    background-color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+main {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+h1 { font-size: 28px; }
+h2 { font-size: 22px; margin-top: 28px; }
+h3 { font-size: 18px; }
+
+.examples {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px 64px;
+}
+
+.drawing {
+    width: 230px;
+    height: 230px;
+}
+
+.square {
+    width: 140px;
+    height: 140px;
+    border: 6px solid #000;
+    border-radius: 28px;
+}
+
+.square-orange {
+    background-color: #efb783;
+}
+
+.square-pink {
+    /* Прозорий саме фон: чорна рамка залишається непрозорою. */
+    background-color: rgb(157 93 93 / 65%);
+}
+
+/* Спосіб 1: координати відносно контейнера. */
+.drawing-position {
+    position: relative;
+}
+
+.drawing-position .square {
+    position: absolute;
+}
+
+.drawing-position .square-orange {
+    top: 10px;
+    left: 10px;
+}
+
+.drawing-position .square-pink {
+    top: 75px;
+    left: 75px;
+}
+
+/* Спосіб 2: лише transform для зміщення квадратів, без position.
+   Другий блок у потоці починається на y = 140px.
+   140px - 65px = 75px: його кінцеві координати дорівнюють (75, 75). */
+.drawing-transform .square-orange {
+    transform: translate(10px, 10px);
+}
+
+.drawing-transform .square-pink {
+    transform: translate(75px, -65px);
+}
+
+@media (max-width: 480px) {
+    body { margin: 12px; }
+    .student-table td { padding: 4px; }
+}

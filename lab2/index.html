@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Рябокінь Дмитро Олександрович, ІС-41, лабораторна робота 2, варіант 8, HTML5, CSS3">
+    <meta name="description" content="Лабораторна робота №2: таблиця HTML та два способи створення зображення засобами CSS. Рябокінь Дмитро Олександрович, ІС-41, варіант 8.">
+    <title>Рябокінь Дмитро Олександрович — ІС-41 — ЛР №2 — Варіант 8</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Стилі таблиці розміщено в HTML відповідно до завдання 1. -->
+    <style>
+        .student-table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed;
+        }
+
+        .student-table .narrow-column { width: 12.5%; }
+        .student-table .wide-column { width: 25%; }
+
+        .student-table td {
+            height: 48px;
+            padding: 8px;
+            border: 2px solid #000;
+            overflow-wrap: anywhere;
+        }
+
+        .student-table tr:first-child {
+            background-color: #088f8f;
+            color: #000;
+        }
+
+        .student-table tr:nth-child(2) {
+            background-color: #f5f508;
+            color: #000;
+        }
+
+        /* При наведенні кольори фону й тексту міняються місцями. */
+        .student-table tr:first-child:hover {
+            background-color: #000;
+            color: #088f8f;
+        }
+
+        .student-table tr:nth-child(2):hover {
+            background-color: #000;
+            color: #f5f508;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Лабораторна робота №2</h1>
+        <p>Рябокінь Дмитро Олександрович · ІС-41 · Варіант 8</p>
+
+        <h2>Завдання 1. Таблиця</h2>
+        <table class="student-table" aria-label="Таблиця за макетом варіанта 8">
+            <colgroup>
+                <col class="narrow-column">
+                <col class="narrow-column">
+                <col class="wide-column">
+                <col class="wide-column">
+                <col class="wide-column">
+            </colgroup>
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td rowspan="2">Рябокінь</td>
+                    <td>Дмитро</td>
+                    <td rowspan="2">Олександрович</td>
+                </tr>
+                <tr>
+                    <td colspan="2">ІС-41</td>
+                    <td>ЛР №2 · Варіант 8</td>
+                </tr>
+                <tr>
+                    <td colspan="2"></td>
+                    <td colspan="3"></td>
+                </tr>
+            </tbody>
+        </table>
+        <p>Наведіть вказівник на перший або другий рядок, щоб змінити кольори.</p>
+
+        <h2>Завдання 2. Зображення засобами CSS</h2>
+        <div class="examples">
+            <section>
+                <h3>Спосіб 1 — position</h3>
+                <div class="drawing drawing-position" role="img" aria-label="Два квадрати із заокругленими кутами: помаранчевий угорі ліворуч і напівпрозорий рожевий унизу праворуч">
+                    <div class="square square-orange"></div>
+                    <div class="square square-pink"></div>
+                </div>
+            </section>
+            <section>
+                <h3>Спосіб 2 — transform</h3>
+                <div class="drawing drawing-transform" role="img" aria-label="Те саме зображення двох квадратів, створене за допомогою трансформацій">
+                    <div class="square square-orange"></div>
+                    <div class="square square-pink"></div>
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
+</html>
