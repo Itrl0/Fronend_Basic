@@ -1,0 +1,32 @@
+/* Завдання 1: float, без Flexbox та Grid. */
+.block {
+    float: left;
+}
+
+/* Clearfix включає плаваючі колонки в контейнер. */
+.layout-middle::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.layout-bottom {
+    clear: both;
+}
+
+/* Центрування підписів без flex: псевдоелемент має висоту блока. */
+.layout-top::before,
+.layout-bottom::before,
+.block::before {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.layout-top span,
+.layout-bottom span,
+.block span {
+    display: inline-block;
+    vertical-align: middle;
+}

@@ -1,0 +1,23 @@
+/* Завдання 2: Flexbox, без float. */
+.layout {
+    display: flex;
+    flex-direction: column;
+}
+
+.layout-top, .layout-middle, .layout-bottom {
+    flex-shrink: 0;
+}
+
+.layout-middle {
+    display: flex;
+}
+
+.block {
+    flex-shrink: 0;
+}
+
+.layout-top, .layout-bottom, .block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
