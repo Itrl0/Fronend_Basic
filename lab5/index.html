@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Лабораторна робота №5 — Події та регулярні вирази. Рябокінь Дмитро Олександрович, ІС-41, номер 129, розрахований варіант 9.">
+    <meta name="keywords" content="JavaScript, події, регулярні вирази, ІС-41, Рябокінь, 129, варіант 9">
+    <title>Рябокінь Дмитро Олександрович — ІС-41 — ЛР №5 — №129 — Варіант 9</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="validation.js" defer></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <h2>Завдання 1. Перевірка форми</h2>
+    <p>Заповніть усі поля. Правильні дані буде показано в окремому вікні, помилки — під відповідними полями.</p>
+    <form id="student-form" novalidate>
+            <div class="field">
+                <label for="fullName">ПІБ</label>
+                <input id="fullName" name="fullName" type="text" value="Рябокінь Д.О." required aria-describedby="fullName-hint fullName-error">
+                <small class="hint" id="fullName-hint">Прізвище та ініціали: Рябокінь Д.О.</small>
+                <p class="error" id="fullName-error"></p>
+            </div>
+            <div class="field">
+                <label for="variant">Варіант форми</label>
+                <input id="variant" name="variant" type="text" value="09" required aria-describedby="variant-hint variant-error">
+                <small class="hint" id="variant-hint">Дві цифри. Розрахований варіант форми — 09; номер у списку — 129.</small>
+                <p class="error" id="variant-error"></p>
+            </div>
+            <div class="field">
+                <label for="group">Група</label>
+                <input id="group" name="group" type="text" value="ІС-41" required aria-describedby="group-hint group-error">
+                <small class="hint" id="group-hint">Дві великі українські літери, дефіс і дві цифри.</small>
+                <p class="error" id="group-error"></p>
+            </div>
+            <div class="field">
+                <label for="faculty">Факультет</label>
+                <input id="faculty" name="faculty" type="text" value="" required aria-describedby="faculty-hint faculty-error">
+                <small class="hint" id="faculty-hint">Чотири великі українські літери, наприклад ФІОТ.</small>
+                <p class="error" id="faculty-error"></p>
+            </div>
+            <div class="field">
+                <label for="birthDate">Дата народження</label>
+                <input id="birthDate" name="birthDate" type="text" value="26.10.2006" required aria-describedby="birthDate-hint birthDate-error">
+                <small class="hint" id="birthDate-hint">ДД.ММ.РРРР, наприклад 26.10.2006.</small>
+                <p class="error" id="birthDate-error"></p>
+            </div>
+        <button type="submit">Перевірити</button>
+        <button type="reset">Початкові значення</button>
+    </form>
+    <p class="status" id="form-status" role="status" aria-live="polite"></p>
+
+    <h2>Завдання 2. Події в таблиці</h2>
+    <p class="task-description">Наведіть вказівник на клітинку 21 для випадкового кольору.
+        Один клік задає колір із палітри; подвійний — зафарбовує клітинки 21 і 33
+        у тому самому стовпці через одну, починаючи з обраної.</p>
+    <div class="palette-controls">
+        <label for="palette">Колір зафарбовування</label>
+        <input type="color" id="palette" value="#71c4e8">
+        <button id="reset-colors" type="button">Скинути кольори</button>
+    </div>
+    <table id="color-grid">
+        <caption>Таблиця 6 × 6. Активну клітинку 21 позначено рамкою.</caption>
+        <tbody>
+                <tr>
+                    <td id="cell-1">1</td>
+                    <td id="cell-2">2</td>
+                    <td id="cell-3">3</td>
+                    <td id="cell-4">4</td>
+                    <td id="cell-5">5</td>
+                    <td id="cell-6">6</td>
+                </tr>
+                <tr>
+                    <td id="cell-7">7</td>
+                    <td id="cell-8">8</td>
+                    <td id="cell-9">9</td>
+                    <td id="cell-10">10</td>
+                    <td id="cell-11">11</td>
+                    <td id="cell-12">12</td>
+                </tr>
+                <tr>
+                    <td id="cell-13">13</td>
+                    <td id="cell-14">14</td>
+                    <td id="cell-15">15</td>
+                    <td id="cell-16">16</td>
+                    <td id="cell-17">17</td>
+                    <td id="cell-18">18</td>
+                </tr>
+                <tr>
+                    <td id="cell-19">19</td>
+                    <td id="cell-20">20</td>
+                    <td id="cell-21" class="active-cell" tabindex="0" aria-label="Клітинка 21, активна">21</td>
+                    <td id="cell-22">22</td>
+                    <td id="cell-23">23</td>
+                    <td id="cell-24">24</td>
+                </tr>
+                <tr>
+                    <td id="cell-25">25</td>
+                    <td id="cell-26">26</td>
+                    <td id="cell-27">27</td>
+                    <td id="cell-28">28</td>
+                    <td id="cell-29">29</td>
+                    <td id="cell-30">30</td>
+                </tr>
+                <tr>
+                    <td id="cell-31">31</td>
+                    <td id="cell-32">32</td>
+                    <td id="cell-33">33</td>
+                    <td id="cell-34">34</td>
+                    <td id="cell-35">35</td>
+                    <td id="cell-36">36</td>
+                </tr>
+        </tbody>
+    </table>
+    <p class="hint">Клавіатура: перейдіть на клітинку 21 через Tab. Enter або пробіл — зафарбувати її;
+        Shift + Enter — зафарбувати 21 і 33.</p>
+    <p class="status" id="table-status" role="status" aria-live="polite"></p>
+    <noscript><p>Для перевірки форми й обробки подій увімкніть JavaScript у браузері.</p></noscript>
+</body>
+</html>

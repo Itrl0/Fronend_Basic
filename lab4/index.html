@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Рябокінь Дмитро Олександрович, ІС-41, HTML5, лабораторна робота 4, варіант 129, Київ">
+    <meta name="description" content="Особиста сторінка Рябоконя Дмитра Олександровича, студента групи ІС-41: освіта, хобі, улюблені фільми та місто Київ. Лабораторна робота №4, варіант 129.">
+    <title>Рябокінь Дмитро Олександрович — ІС-41 — Лабораторна робота №4 — Варіант 129</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <h1>Лабораторна робота №4. Варіант 129</h1>
+    <h2>Рябокінь Дмитро Олександрович</h2>
+    <p>Дата і місце народження: 26 жовтня 2006 року, місто Київ.</p>
+    <p>Освіта: школа №95; Національний технічний університет України
+        «Київський політехнічний інститут імені Ігоря Сікорського», група ІС-41.</p>
+
+    <h3>Мої хобі</h3>
+    <ul>
+        <li>Баскетбол.</li>
+        <li>Тренування в тренажерному залі.</li>
+        <li>Комп’ютерна гра Counter-Strike.</li>
+    </ul>
+
+    <h3 id="color-by-id" class="color-target" tabindex="0" title="Натисніть або використайте Enter чи пробіл, щоб змінити кольори">Мої улюблені фільми</h3>
+    <ol class="color-by-selector color-target" tabindex="0" title="Натисніть або використайте Enter чи пробіл, щоб змінити кольори">
+        <li>«Гаррі Поттер і філософський камінь».</li>
+        <li>«Гаррі Поттер і таємна кімната».</li>
+        <li>«Гаррі Поттер і в’язень Азкабану».</li>
+    </ol>
+
+    <h3>Моє улюблене місто — Київ</h3>
+    <p>Київ — моє рідне та улюблене місто, столиця України.
+        Тут поєднуються історична архітектура, сучасні будівлі та зелені парки.
+        Особливу атмосферу місту надають Дніпро, його набережні та краєвиди з київських пагорбів.</p>
+    <p>Натисніть на фотографію, щоб перейти на офіційний портал Києва.</p>
+    <a id="city-link" href="https://kyivcity.gov.ua/">
+        <img id="city-image" src="images/kyiv.jpg" alt="Панорама Дніпра в Києві з мостом Патона праворуч" width="800">
+    </a>
+    <div class="image-controls" role="group" aria-label="Керування фотографією">
+        <button id="add-image" type="button">Додати</button>
+        <button id="increase-image" type="button">Збільшити</button>
+        <button id="decrease-image" type="button">Зменшити</button>
+        <button id="remove-image" type="button">Видалити</button>
+    </div>
+    <p id="image-status" role="status" aria-live="polite"></p>
+    <p>Фото: Tiia Monto,
+        <a href="https://commons.wikimedia.org/wiki/File:Dnieper_River_panorama.jpg">Dnieper River panorama</a>,
+        <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.
+        Зменшена копія без змін змісту зображення.</p>
+    <p class="hint">Варіант 129: (129 mod 10) + 1 = 10.
+        Натисніть на заголовок «Мої улюблені фільми» (елемент №10)
+        або список під ним (№11), щоб змінити кольори.</p>
+</body>
+</html>

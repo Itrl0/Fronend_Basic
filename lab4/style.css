@@ -1,0 +1,54 @@
+body {
+    max-width: 1000px;
+    margin: 24px auto;
+    padding: 0 16px;
+    color: #111;
+    background-color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.color-target {
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+/* Два стани, які перемикаються при кожному кліку. */
+.color-target.color-state-a {
+    color: #fff;
+    background-color: #174ea6;
+}
+
+.color-target.color-state-b {
+    color: #111;
+    background-color: #ffe082;
+}
+
+.color-target:focus-visible,
+button:focus-visible {
+    outline: 3px solid #8e24aa;
+    outline-offset: 3px;
+}
+
+#city-image {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.image-controls { margin-top: 16px; }
+
+button {
+    margin: 0 8px 8px 0;
+    padding: 8px 14px;
+    font: inherit;
+    cursor: pointer;
+}
+
+button:disabled {
+    cursor: default;
+    opacity: 0.5;
+}
+
+.hint { font-size: 14px; }
